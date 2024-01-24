@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,8 +115,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Firefox"
-set $ws2 "2: Terminal"
+set $ws1 "1"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -152,7 +152,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # assign programs to workspaces
 # firefox -> workspace 1
-assign [class="Firefox-esr"] $ws1
+# FIXME
+assign [class="Firefox"] $ws1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -201,14 +202,20 @@ bindsym $mod+shift+x exec --no-startup-id i3lock
 
 # Execute on first start of i3
 # exec --no-startup-id someprogram
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
 exec --no-startup-id picom -b
 
 # Always execute
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id /opt/python/bin/wal -R
 
 # Border style
-default_border pixel
+default_border pixel 4
+default_floating_border normal
+hide_edge_borders none
 
-# Include other sections
-include ~/.config/i3/gaps.conf
+# Gaps
+gaps inner 10
+#gaps outer 20
+gaps outer 0
+
+bindsym $mod+b exec --no-startup-id firefox &
