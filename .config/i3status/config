@@ -1,0 +1,33 @@
+general {
+	output_format = "i3bar"
+	colors = true
+}
+
+order += "battery 0"
+order += "load"
+order += "memory"
+order += "tztime berlin"
+
+battery 0 {
+	last_full_capacity = true
+	format = "%status %percentage"
+	format_down = ""
+	status_chr = "charging"
+	status_full = ""
+	status_bat = ""
+}
+
+load {
+	format = "load avg: %5min"
+}
+
+memory {
+	format = "memory: %used / %total"
+	threshold_degraded = "10%"
+	format_degraded = "MEMORY: %free"
+}
+
+tztime berlin {
+	format = "%d.%m.%Y %H:%M:%S"
+	timezone = "Europe/Berlin"
+}
