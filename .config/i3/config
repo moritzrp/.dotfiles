@@ -233,6 +233,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # assign programs to workspaces
+# xprop | grep WM_CLASS | awk '{ print $4 }' to get classes
 assign [class="Microsoft-edge"] $ws5
 assign [class="org.remmina.Remmina"] $ws6
 assign [class="Code"] $ws3
