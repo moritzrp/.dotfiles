@@ -6,6 +6,7 @@ general {
 order += "battery 0"
 order += "load"
 order += "memory"
+order += "volume master"
 order += "tztime berlin"
 
 battery 0 {
@@ -25,6 +26,12 @@ memory {
 	format = "memory: %used / %total"
 	threshold_degraded = "10%"
 	format_degraded = "MEMORY: %free"
+}
+
+volume master {
+    format = "♪: %volume"
+    format_muted = "♪: muted (%volume)"
+    device = "pulse:1"
 }
 
 tztime berlin {
