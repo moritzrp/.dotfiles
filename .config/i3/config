@@ -94,7 +94,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -208,6 +208,20 @@ mode "monitor" {
 
 bindsym $mod+m mode "monitor"
 
+# customization
+# apps used for work
+mode "work" {
+        bindsym t exec --no-startup-id /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo "--app-url=https://teams.microsoft.com/?clientType=pwa";mode "default"
+        bindsym a exec --no-startup-id remmina -c .local/share/remmina/time-tracking.remmina;mode "default"
+    	
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+w mode "work"
+
 # autostart
 # set compose key
 exec_always --no-startup-id setxkbmap -option compose:ralt
@@ -216,4 +230,13 @@ exec_always --no-startup-id autorandr --change
 
 # display
 default_border pixel 1
-default_floating_border pixel 1 
+default_floating_border pixel 1
+
+# assign programs to workspaces
+assign [class="Microsoft-edge"] $ws5
+assign [class="org.remmina.Remmina"] $ws6
+assign [class="Code"] $ws3
+
+# hide Teams sharing pop-up as much as possible. Too low negative number will
+# reset the window to it's default position, -55 px works for 1920x1080 screen.
+for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
