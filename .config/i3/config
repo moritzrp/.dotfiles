@@ -184,7 +184,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-		position top
+	position bottom
+        font pango:monospace 9 
 }
 
 # customization by me
@@ -222,11 +223,16 @@ mode "work" {
 
 bindsym $mod+w mode "work"
 
+# bindings
+bindsym Print exec flameshot gui
+
 # autostart
 # set compose key
-exec_always --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id setxkbmap -option compose:ralt
 # apply correct display automatically
-exec_always --no-startup-id autorandr --change
+exec --no-startup-id autorandr --change
+# sound tray
+exec --no-startup-id pasystray
 
 # display
 default_border pixel 1
