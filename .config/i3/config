@@ -184,8 +184,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	position bottom
-        font pango:monospace 9 
+    	position bottom
+        font pango:Hack Nerd Font 9 
 }
 
 # customization by me
