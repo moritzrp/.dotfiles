@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -60,10 +60,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -212,7 +212,7 @@ bindsym $mod+m mode "monitor"
 # customization
 # apps used for work
 mode "work" {
-        bindsym t exec --no-startup-id /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo "--app-url=https://teams.microsoft.com/?clientType=pwa";mode "default"
+        bindsym t exec --no-startup-id chromium --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo;mode "default"
         bindsym a exec --no-startup-id remmina -c .local/share/remmina/time-tracking.remmina;mode "default"
     	
         # back to normal: Enter or Escape or $mod+r
@@ -225,6 +225,7 @@ bindsym $mod+w mode "work"
 
 # bindings
 bindsym Print exec flameshot gui
+bindsym $mod+l exec --no-startup-id i3lock
 
 # autostart
 # set compose key
@@ -232,7 +233,8 @@ exec --no-startup-id setxkbmap -option compose:ralt
 # apply correct display automatically
 exec --no-startup-id autorandr --change
 # sound tray
-exec --no-startup-id pasystray
+# exec --no-startup-id pasystray
+exec --no-startup-id blueman-tray
 
 # display
 default_border pixel 1
@@ -240,8 +242,8 @@ default_floating_border pixel 1
 
 # assign programs to workspaces
 # xprop | grep WM_CLASS | awk '{ print $4 }' to get classes
-assign [class="Microsoft-edge"] $ws5
-assign [class="org.remmina.Remmina"] $ws6
+assign [class="Chromium" instance="crx_cifhbcnohmdccbgoicgdjpfamggdegmo"] $ws4
+assign [class="org.remmina.Remmina"] $ws5
 assign [class="Code"] $ws3
 
 # hide Teams sharing pop-up as much as possible. Too low negative number will

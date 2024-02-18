@@ -8,3 +8,7 @@ save_to_clipboard = true
 [window]
 blur = true
 opacity = 0.9
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
