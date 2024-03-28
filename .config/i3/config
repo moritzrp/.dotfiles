@@ -194,8 +194,10 @@ bar {
 mode "monitor" {
 		# press a -> switch automatically to correct profile
 		bindsym a exec --no-startup-id autorandr --change; mode "default"
-		# press d -> docked
-		bindsym d exec --no-startup-id autorandr --load docked;mode "default"
+		# Home | press h -> monitor
+		bindsym h exec --no-startup-id autorandr --load docked;mode "default"
+        # Work | press w -> docked 
+		bindsym w exec --no-startup-id autorandr --load work;mode "default"
 		# press l -> laptop (same as mobile)
 		bindsym l exec --no-startup-id autorandr --load mobile;mode "default"
 		# press m -> mobile
@@ -228,8 +230,9 @@ bindsym Print exec flameshot gui
 bindsym $mod+l exec --no-startup-id i3lock
 
 # autostart
+exec_always --no-startup-id autotiling
 # set compose key
-exec --no-startup-id setxkbmap -option compose:ralt
+exec_always --no-startup-id setxkbmap -option compose:ralt
 # apply correct display automatically
 exec --no-startup-id autorandr --change
 # sound tray

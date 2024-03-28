@@ -103,6 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias ssh="TERM=xterm-256color $(which ssh)"
+alias notes="cd ~/notes;vim ."
+alias vm="cd ~/vagrant"
+alias vmc7="cd ~/vagrant/centos7"
+alias k="kubectl"
 
 eval `ssh-agent` > /dev/null
 ssh-add ~/.ssh/moru271222_pl 2> /dev/null
+export PATH=~/.dotnet:$PATH
