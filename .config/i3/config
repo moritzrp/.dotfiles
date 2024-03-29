@@ -186,6 +186,8 @@ bar {
         status_command i3status
     	position bottom
         font pango:Hack Nerd Font 9 
+        wheel_up_cmd nop
+        wheel_down_cmd nop
 }
 
 # customization by me
