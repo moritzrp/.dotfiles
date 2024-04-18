@@ -9,11 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10 
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -44,30 +44,26 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
-
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+# changed by me
+bindsym $mod+Return exec --no-startup-id alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# (default) start dmenu (a program launcher)
-# bindsym $mod+d exec --no-startup-id dmenu_run
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -76,10 +72,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -88,17 +84,17 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+Shift+h split h
+bindsym $mod+h split h
 
 # split in vertical orientation
-#bindsym $mod+Shift+v split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -127,33 +123,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-
-# assign programs to workspaces
-# firefox -> workspace 1
-# FIXME
-assign [class="Firefox"] $ws1
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -173,7 +164,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym odiaeresis resize grow width 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -191,31 +182,75 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#	position top
-#}
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+bar {
+        status_command i3status
+    	position bottom
+        font pango:Hack Nerd Font 9 
+}
 
-# Lock screen on key press
-bindsym $mod+shift+x exec --no-startup-id i3lock
+# customization by me
+# alt+m to switch displays
+# bindsym $mod+m exec --no-startup-id autorandr --change
+mode "monitor" {
+		# press a -> switch automatically to correct profile
+		bindsym a exec --no-startup-id autorandr --change; mode "default"
+		# Home | press h -> monitor
+		bindsym h exec --no-startup-id autorandr --load docked;mode "default"
+        # Work | press w -> docked 
+		bindsym w exec --no-startup-id autorandr --load work;mode "default"
+		# press l -> laptop (same as mobile)
+		bindsym l exec --no-startup-id autorandr --load mobile;mode "default"
+		# press m -> mobile
+		bindsym m exec --no-startup-id autorandr --load mobile; mode "default"
+        
+		# back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
 
-# Execute on first start of i3
-# exec --no-startup-id someprogram
-# exec --no-startup-id firefox
-exec --no-startup-id picom -b
+bindsym $mod+m mode "monitor"
 
-# Always execute
-exec_always --no-startup-id /opt/python/bin/wal -R
+# customization
+# apps used for work
+mode "work" {
+        bindsym t exec --no-startup-id chromium --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo;mode "default"
+        bindsym a exec --no-startup-id remmina -c .local/share/remmina/time-tracking.remmina;mode "default"
+    	
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
 
-# Border style
-default_border pixel 4
-default_floating_border normal
-hide_edge_borders none
+bindsym $mod+w mode "work"
 
-# Gaps
-gaps inner 10
-#gaps outer 20
-gaps outer 0
+# bindings
+bindsym Print exec flameshot gui
+bindsym $mod+l exec --no-startup-id i3lock
+bindsym $mod+Shift+Return exec --no-startup-id alacritty --class floating_term
 
-bindsym $mod+b exec --no-startup-id firefox &
+# autostart
+exec_always --no-startup-id autotiling
+# set compose key
+exec_always --no-startup-id setxkbmap -option compose:ralt
+# apply correct display automatically
+exec --no-startup-id autorandr --change
+# sound tray
+# exec --no-startup-id pasystray
+exec --no-startup-id blueman-tray
+
+# display
+default_border pixel 1
+default_floating_border pixel 1
+
+# assign programs to workspaces
+# xprop | grep WM_CLASS | awk '{ print $4 }' to get classes
+assign [class="Chromium" instance="crx_cifhbcnohmdccbgoicgdjpfamggdegmo"] $ws4
+assign [class="org.remmina.Remmina"] $ws5
+assign [class="Code"] $ws3
+
+# hide Teams sharing pop-up as much as possible. Too low negative number will
+# reset the window to it's default position, -55 px works for 1920x1080 screen.
+for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 1 px -55 px
+for_window [class="floating_term"] floating enable
