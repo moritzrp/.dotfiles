@@ -1,0 +1,9 @@
+Include conf.d/*
+AddKeysToAgent yes
+
+Host github.com
+    Hostname github.com
+    User git
+    Identityfile ~/.ssh/moritzrp
+    IdentitiesOnly yes
+
