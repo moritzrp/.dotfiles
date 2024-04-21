@@ -1,0 +1,18 @@
+= Dotfiles
+
+Personal dotfile collection
+
+= Tmux
+
+Reference for the tmux configuration.
+
+== Custom Keymap
+
+[cols="Keys, Function"]
+|===
+|Keys |Function
+|<alt> + a |Prefix
+|<alt> + <arrow> |Move pane
+|<alt> + <n> |Go to window <n>
+|<prefix> + q |Kill pane / window
+|<prefix> + r |Reload tmux config
