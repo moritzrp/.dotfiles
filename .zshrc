@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,3 +113,4 @@ alias k="kubectl"
 eval `ssh-agent` > /dev/null
 ssh-add ~/.ssh/moru271222_pl 2> /dev/null
 export PATH=~/.dotnet:$PATH
+
