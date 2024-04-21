@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -72,9 +72,17 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    ssh-agent
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+# ssh-agent settings
+# don't load identities on startup
+# keys are added to agent via ssh config
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent lifetime 4h
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,8 +117,4 @@ alias notes="cd ~/notes;vim ."
 alias vm="cd ~/vagrant"
 alias vmc7="cd ~/vagrant/centos7"
 alias k="kubectl"
-
-eval `ssh-agent` > /dev/null
-ssh-add ~/.ssh/moru271222_pl 2> /dev/null
-export PATH=~/.dotnet:$PATH
 
