@@ -117,4 +117,5 @@ alias notes="cd ~/notes;vim ."
 alias vm="cd ~/vagrant"
 alias vmc7="cd ~/vagrant/centos7"
 alias k="kubectl"
+alias lg="lazygit"
 
