@@ -7,3 +7,4 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set signcolumn=no")
 vim.g.mapleader = " "
 vim.opt.showmode = false
+vim.cmd('autocmd BufNewFile,BufRead ~/.ssh/conf.d/* setfiletype sshconfig')
