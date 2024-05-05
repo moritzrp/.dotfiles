@@ -208,8 +208,9 @@ mode "monitor" {
 		# back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+m mode "default"
 }
+
 
 bindsym $mod+m mode "monitor"
 
@@ -222,10 +223,20 @@ mode "work" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+w mode "default"
 }
 
 bindsym $mod+w mode "work"
+
+mode "power" {
+        bindsym p exec --no-startup-id systemctl poweroff
+        bindsym r exec --no-startup-id systemctl reboot
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+p mode "default"
+}
+bindsym $mod+p mode "power"
 
 # bindings
 bindsym Print exec flameshot gui
