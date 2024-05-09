@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # alias vim="nvim"
-alias vim="NVIM_APPNAME='kickstart.nvim' nvim"
+alias vim="nvim"
 alias ssh="TERM=xterm-256color $(which ssh)"
 alias notes="cd ~/notes;vim ."
 alias vm="cd ~/vagrant"
