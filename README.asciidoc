@@ -4,7 +4,7 @@ Personal dotfile collection
 
 == Mindmap
 
-![Mindmap](./docs/setup-mindmap.png)
+image::docs/setup-mindmap.png[Mindmap]
 
 == Tools
 
