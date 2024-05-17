@@ -10,6 +10,7 @@ Personal dotfile collection
 - i3wm
 - nvim
 - zsh
+- lazygit
 
 === Others
 
