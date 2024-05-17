@@ -2,6 +2,10 @@
 
 Personal dotfile collection
 
+== Mindmap
+
+![Mindmap](./docs/setup-mindmap.png)
+
 == Tools
 
 === Core
