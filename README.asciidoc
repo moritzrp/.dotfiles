@@ -2,11 +2,31 @@
 
 Personal dotfile collection
 
-= Tmux
+== Tools
+
+=== Core
+
+- alacritty
+- i3wm
+- nvim
+- zsh
+
+=== Others
+
+- blueman-tray
+- autorandr
+- autotiling
+- flameshot
+
+== Fonts
+
+- Hack Nerd Font
+
+== Tmux
 
 Reference for the tmux configuration.
 
-== Custom Keymap
+=== Custom Keymap
 
 [cols="Keys, Function"]
 |===
