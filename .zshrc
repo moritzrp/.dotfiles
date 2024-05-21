@@ -13,7 +13,6 @@ ZSH_THEME="robbyrussell"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -121,3 +120,9 @@ alias vmc7="cd ~/vagrant/centos7"
 alias k="kubectl"
 alias lg="lazygit"
 
+bindkey -s ^s "tmux-sessionizer\n"
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
