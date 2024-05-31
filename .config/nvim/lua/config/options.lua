@@ -19,6 +19,9 @@ vim.opt.clipboard = "unnamedplus"
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Disable backups
+vim.opt.backup = false
+
 -- Save undo history
 vim.opt.undofile = true
 
@@ -54,3 +57,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Backspace behavior
+vim.opt.backspace = { "start", "eol", "indent" }
