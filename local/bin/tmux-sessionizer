@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     session=$1
 else
-    session=$(find ~ ~/code -mindepth 1 -maxdepth 1 -type d | fzf)
+    session=$(find ~ ~/code ~/setup -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 session_name=$(basename "$session" | tr . _)
