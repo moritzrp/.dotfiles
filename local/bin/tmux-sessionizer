@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [[ $# -eq 1 ]]; then
+    session=$1
+else
+    session=$(find ~ ~/code -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+session_name=$(basename "$session" | tr . _)
+
+if [[ -z $session_name ]]; then
+    echo "No directory was provided. Exiting."
+    exit 1
+fi
+
+if ! tmux has-session -t "$session_name" 2> /dev/null; then
+    tmux new-session -s "$session_name" -c "$session" -d
+fi
+
+if [[ -z $TMUX ]];then
+    tmux attach-session -t $session_name
+else
+    tmux switch-client -t $session_name
+fi
