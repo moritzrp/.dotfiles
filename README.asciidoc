@@ -2,6 +2,16 @@
 
 Personal dotfile collection
 
+== Installation
+
+[source,bash]
+----
+pip install --user dotbot
+
+dotbot -c install.conf.yaml
+----
+
+
 == Mindmap
 
 image::docs/setup-mindmap.png[Mindmap]
