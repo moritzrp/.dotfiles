@@ -123,7 +123,6 @@ return {
         -- clangd = {},
         -- gopls = {},
         pyright = {},
-        ruff = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -163,6 +162,9 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         "stylua", -- Used to format Lua code
+        "ruff", -- Used to format and lint Python code
+        "hadolint", -- Used to lint Dockerfiles
+        "markdownlint", -- Used to lint Markdown
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
