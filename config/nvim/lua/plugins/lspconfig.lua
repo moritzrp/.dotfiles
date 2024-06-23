@@ -122,7 +122,22 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        -- pyright = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                autopep8 = { enabled = false },
+                pycodestyle = { enabled = false },
+                yapf = { enabled = false },
+                pyflakes = { enabled = false },
+                pylint = { enabled = false },
+                mccabe = { enabled = false },
+                rope_autoimport = { enabled = true },
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
