@@ -8,6 +8,7 @@ return {
         markdown = { "markdownlint" },
         python = { "ruff" },
         dockerfile = { "hadolint" },
+        yaml = { "yamllint", "ansible_lint" },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

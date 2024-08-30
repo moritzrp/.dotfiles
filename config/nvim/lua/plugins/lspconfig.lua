@@ -180,6 +180,8 @@ return {
         "ruff", -- Used to format and lint Python code
         "hadolint", -- Used to lint Dockerfiles
         "markdownlint", -- Used to lint Markdown
+        "ansible-lint",
+        "yamllint",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
