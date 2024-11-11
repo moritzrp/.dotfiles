@@ -20,17 +20,14 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        pylsp = {
+        pyright = {
           settings = {
-            pylsp = {
-              plugins = {
-                autopep8 = { enabled = false },
-                pycodestyle = { enabled = false },
-                yapf = { enabled = false },
-                pyflakes = { enabled = false },
-                pylint = { enabled = false },
-                mccabe = { enabled = false },
-                rope_autoimport = { enabled = true },
+            pyright = {
+              disableOrganizeImports = true,
+            },
+            python = {
+              analysis = {
+                ignore = { "*" },
               },
             },
           },
@@ -39,7 +36,7 @@ return {
           cmd_env = { RUFF_TRACE = "messages" },
           init_options = {
             settings = {
-              logLevel = "error",
+              logLevel = "info",
             },
           },
           keys = {
@@ -50,14 +47,6 @@ return {
             },
           },
         },
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        python = { "ruff" },
       },
     },
   },
