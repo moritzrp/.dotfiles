@@ -17,6 +17,10 @@ return {
     opts = { ensure_installed = { "ninja", "rst" } },
   },
   {
+    "williamboman/mason.nvim",
+    opts = { ensure_installed = { "ruff", "pyright", "mypy" } },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -47,6 +51,14 @@ return {
             },
           },
         },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        python = { "mypy" },
       },
     },
   },
