@@ -4,6 +4,10 @@ Personal dotfile collection
 
 == Installation
 
+=== Prerequisites
+
+- Install a NerdFont
+
 [source,bash]
 ----
 pip install --user dotbot

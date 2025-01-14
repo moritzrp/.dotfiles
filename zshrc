@@ -1,4 +1,4 @@
-export PATH=$HOME/.dotnet:$HOME/.local/bin/go/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.dotnet:$HOME/.local/bin/go/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -124,7 +124,7 @@ bindkey -s ^s "tmux-sessionizer\n"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"

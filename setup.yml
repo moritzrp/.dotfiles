@@ -1,0 +1,60 @@
+---
+- name: Setup dotfiles
+  hosts: localhost
+  tasks:
+    - name: Install required packages
+      become: true
+      ansible.builtin.apt:
+        pkg:
+          - build-essential
+          - fzf
+          - tmux
+          - libfuse2 # required for appimages
+          # python libs
+          - libbz2-dev
+          - libncurses-dev
+          - libffi-dev
+          - libreadline-dev
+          - libssl-dev
+        update_cache: true
+
+    - name: Check if pyenv is installed
+      ansible.builtin.command: which pyenv
+      register: pyenv_command
+      ignore_errors: true
+      changed_when: false
+    - name: Install pyenv
+      when: "pyenv_command.rc != 0"
+      block:
+        - name: Fetch auto installer
+          ansible.builtin.uri:
+            url: "https://pyenv.run"
+            return_content: true
+          register: pyenv_script
+        - name: Execute installer
+          ansible.builtin.command:
+            cmd: bash
+            stdin: "{{ pyenv_script.content }}"
+          args:
+            creates: "{{ ansible_env.HOME }}/.pyenv/bin/pyenv"
+    - name: Install latest python version
+      ansible.builtin.command:
+        cmd: pyenv install 3.13
+      ignore_errors: true
+      register: pyenv_install_version
+      changed_when: pyenv_install_version.rc == 0
+    - name: Set default python version
+      ansible.builtin.command:
+        cmd: pyenv global 3.13
+      ignore_errors: true
+      register: pyenv_set_default
+      changed_when: pyenv_set_default.rc == 0
+
+    - name: Install nvm
+      ansible.builtin.shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+      args:
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+    - name: Install latest node version
+      ansible.builtin.command:
+        cmd: nvm install node
