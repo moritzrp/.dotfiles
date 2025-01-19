@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- create:
+    - ~/.ssh
+    - ~/.envs
+    - ~/work
+    - ~/personal
+
+- link:
+    ~/AppData/Local/nvim: config/nvim
+    ~/.glzr/glazewm: config/glazewm
+
+- shell:
+    - description: Demo Powershell
+      command: >
+        powershell -Command "
+        $greeting = 'Hello World!';
+        echo $greeting;
+        "
+      quiet: true
+      stdout: true
+      stderr: true

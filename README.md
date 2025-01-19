@@ -4,14 +4,17 @@ My personal tools and dotfiles.
 
 ## Installation
 
-### Prerequisites
+### Windows
 
-- Install a NerdFont
+Make sure Python is installed.
 
-```bash
-pip install --user dotbot
-dotbot -c install.conf.yaml
+```powershell
+# Powershell needs to be started as admin.
+# Otherwise you cannot create symbolic links.
+.\install.ps1
 ```
+
+See Wiki for installation steps of other tools. It's not fully automated yet.
 
 ## Setup
 
