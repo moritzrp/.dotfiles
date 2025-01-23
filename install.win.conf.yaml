@@ -13,6 +13,7 @@
 - link:
     ~/AppData/Local/nvim: config/nvim
     ~/.glzr/glazewm: config/glazewm
+    ~/Documents/WindowsPowerShell: config/powershell
 
 - shell:
     - description: Demo Powershell
