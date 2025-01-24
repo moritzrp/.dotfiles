@@ -239,8 +239,11 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ["shell-exec wt"]
+  - commands: ["shell-exec alacritty --command ubuntu"]
     bindings: ["alt+enter"]
+
+  - commands: ["shell-exec alacritty"]
+    bindings: ["alt+shift+enter"]
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ["focus --workspace 1"]
