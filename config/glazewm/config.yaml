@@ -135,7 +135,15 @@ window_rules:
 
   - commands: ["set-floating"]
     match:
-      - window_process: { equals: "mstsc" }
+      - window_process: { regex: "mstsc|EXCEL" }
+
+  - commands: ["move --workspace 1"]
+    match:
+      - window_process: { regex: "msedge|firefox" }
+
+  - commands: ["move --workspace 4"]
+    match:
+      - window_process: { regex: "ms-teams|OUTLOOK" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
