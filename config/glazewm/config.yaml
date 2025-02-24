@@ -250,7 +250,7 @@ keybindings:
   - commands: ["shell-exec wt"]
     bindings: ["alt+enter"]
 
-  - commands: ["shell-exec wt --command --profile Powershell"]
+  - commands: ["shell-exec wt --profile Windows PowerShell"]
     bindings: ["alt+shift+enter"]
 
   # Change focus to a workspace defined in `workspaces` config.
