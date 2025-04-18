@@ -1,8 +1,16 @@
 - defaults:
+    create:
+      mode: 0755
     link:
       relink: true
 
 - clean: ["~"]
+
+- create:
+    ~/.ssh:
+      mode: 0700
+    ~/work:
+    ~/personal:
 
 - link:
     ~/.vimrc: vimrc
@@ -10,8 +18,12 @@
     ~/.local/bin/:
       glob: true
       path: local/bin/*
+      create: true
     ~/.config/:
       glob: true
       path: config/*
+      create: true
       exclude:
         - config/fish
+        - config/powershell
+        - config/glazewm

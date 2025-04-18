@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+fecho() {
+  echo -e
+  echo -e "${1}${2}${NC}"
+}
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+if [ -d "$HOME/.pyenv" ]; then
+  fecho "$GREEN" "Pyenv is already installed."
+else
+  echo "Installing pyenv."
+  curl -fsSL https://pyenv.run | bash
+  fecho "$GREEN" "Installed pyenv."
+fi
+
+if ! dpkg -s zsh &>/dev/null; then
+  echo "Installing zsh."
+  sudo apt-get install -y zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+  fecho "$GREEN" "Installed zsh."
+
+  echo
+  echo "Installing zsh plugins."
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  fecho "$GREEN" "Installed zsh plugins."
+
+  echo "Changing default shell to zsh."
+  chsh -s "$(which zsh)"
+  fecho "$GREEN" "Changed default shell to zsh."
+fi
