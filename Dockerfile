@@ -16,4 +16,4 @@ RUN chown -R ubuntu:ubuntu /home/ubuntu/dotfiles
 FROM main
 USER ubuntu
 WORKDIR /home/ubuntu
-CMD [ "/bin/bash" ]
+ENTRYPOINT [ "dotfiles/install" ]
