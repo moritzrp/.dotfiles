@@ -2,17 +2,16 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.local/bin/:
-        glob: true
-        path: local/bin/*
+      glob: true
+      path: local/bin/*
     ~/.config/:
-        glob: true
-        path: config/*
-        exclude:
-            - config/fish
-
+      glob: true
+      path: config/*
+      exclude:
+        - config/fish
