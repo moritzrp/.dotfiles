@@ -8,6 +8,7 @@ RUN apt-get update && \
 
 FROM base AS main
 RUN adduser ubuntu sudo && \
+  echo "ubuntu:ubuntu" | chpasswd && \
   echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN mkdir /home/ubuntu/dotfiles
 COPY . /home/ubuntu/dotfiles
