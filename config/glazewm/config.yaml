@@ -135,7 +135,7 @@ window_rules:
 
   - commands: ["set-floating"]
     match:
-      - window_process: { regex: "mstsc|EXCEL" }
+      - window_process: { regex: "mstsc|EXCEL|vmconnect" }
 
   - commands: ["move --workspace 1"]
     match:
