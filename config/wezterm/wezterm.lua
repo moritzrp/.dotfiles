@@ -1,9 +1,12 @@
 local wezterm = require("wezterm")
 local config = {}
+local launch_menu = {}
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
+
+config.launch_menu = launch_menu
 
 -- Appearance
 config.font = wezterm.font("Hack Nerd Font")
