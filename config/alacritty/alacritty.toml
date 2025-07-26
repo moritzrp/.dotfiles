@@ -1,6 +1,5 @@
-[general]
 import = [
-    "~/.config/alacritty/themes/themes/kanagawa_wave.toml"
+    "~/.alacritty-themes/themes/one_dark.toml"
 ]
 
 [env]
@@ -13,6 +12,7 @@ save_to_clipboard = true
 decorations = "None"
 blur = true
 opacity = 0.9
+startup_mode = "Fullscreen"
 
 [font.normal]
 family = "Hack Nerd Font"
