@@ -113,18 +113,10 @@ fi
 # alias vim="nvim"
 alias vim="nvim"
 alias ssh="TERM=xterm-256color $(which ssh)"
-alias notes="cd ~/notes;vim ."
-alias vm="cd ~/vagrant"
-alias vmc7="cd ~/vagrant/centos7"
 alias k="kubectl"
 alias lg="lazygit"
 
 bindkey -s ^s "tmux-sessionizer\n"
-
-
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
