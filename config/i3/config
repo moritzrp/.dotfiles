@@ -279,3 +279,6 @@ for_window [class="VirtualBox Machine"] border normal
 for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 1 px -55 px
 for_window [class="floating_term"] floating enable
 for_window [class="anki"] floating enable
+
+smart_gaps on
+gaps inner 5
