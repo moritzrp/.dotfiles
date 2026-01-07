@@ -18,6 +18,12 @@ See Wiki for installation steps of other tools. It's not fully automated yet.
 
 ## Setup
 
+### Languages
+
+- Python
+- Golang
+- Rust
+
 ### Common
 
 - [nvim](https://github.com/neovim/neovim)
@@ -36,31 +42,23 @@ See Wiki for installation steps of other tools. It's not fully automated yet.
 
 #### Fonts
 
-- NerdFont -> [Hack NerdFont](https://www.nerdfonts.com/font-downloads)
+[Hack NerdFont](https://www.nerdfonts.com/font-downloads)
+
+- Hack Nerd Font
+- JetBrains Mono
 
 ### Linux
 
 - [alacritty](https://alacritty.org/)
 - [pyenv](https://github.com/pyenv/pyenv)
 - [nvm](https://github.com/nvm-sh/nvm)
-- [i3wm (optional)](https://i3wm.org/)
-- [autotiling (with i3wm)](https://github.com/nwg-piotr/autotiling)
-- [autorandr (with i3wm)](https://github.com/phillipberndt/autorandr)
-- blueman-tray (with i3wm)
-
-#### Gnome Extensions
-
-<!-- TODO: Add extension information -->
 
 ### Windows
-
-<!-- TODO: Add Powershell config to git and link it. -->
 
 Preferred installation method: `winget`
 
 - [GlazeWM](https://github.com/glzr-io/glazewm)
 - [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install)
-  - Wezterm and alacritty could be alternatives
 - [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/)
 - [python3](https://www.python.org/)
 - [fnm](https://github.com/Schniz/fnm)
