@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.opt.relativenumber = false
 vim.opt.iskeyword:append("-")
+vim.opt.cursorline = false
+vim.g.lazyvim_python_lsp = "basedpyright"
