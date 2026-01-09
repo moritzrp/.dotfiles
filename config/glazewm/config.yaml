@@ -247,10 +247,10 @@ keybindings:
   # Launch CMD terminal. lwinernatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ["shell-exec wt"]
+  - commands: ["shell-exec alacritty --command wsl --cd ~"]
     bindings: ["lwin+enter"]
 
-  - commands: ["shell-exec wt --profile Windows PowerShell"]
+  - commands: ["shell-exec alacritty"]
     bindings: ["lwin+shift+enter"]
 
   # Change focus to a workspace defined in `workspaces` config.
