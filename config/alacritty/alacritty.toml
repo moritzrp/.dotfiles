@@ -1,3 +1,4 @@
+[general]
 import = [
     "~/.alacritty-themes/themes/one_dark.toml"
 ]
@@ -11,7 +12,7 @@ save_to_clipboard = true
 [window]
 decorations = "None"
 blur = true
-opacity = 0.9
+opacity = 0.99
 startup_mode = "Maximized"
 
 [font.normal]
