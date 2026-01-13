@@ -5,5 +5,17 @@ return {
       virtual_text = true,
       underline = true,
     },
+    servers = {
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              -- ignore = { "*" },
+              typeCheckingMode = "standard",
+            },
+          },
+        },
+      },
+    },
   },
 }
