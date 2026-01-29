@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "powershell-editor-services",
+      "yamlfmt",
     },
   },
 }
