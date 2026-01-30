@@ -117,7 +117,7 @@ window_rules:
         window_class: {regex: "HwndWrapper"}
   - commands: ["set-floating"]
     match:
-      - window_process: {regex: "mstsc|EXCEL|vmconnect"}
+      - window_process: {regex: "mstsc|EXCEL|vmconnect|vmware"}
   - commands: ["move --workspace 1"]
     match:
       - window_process: {regex: "msedge|firefox"}
