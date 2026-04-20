@@ -23,6 +23,9 @@ for ((i=1;i<=9;i++)); do
 done
 log_info "Set workspace shortcuts"
 
+gsettings set org.gnome.desktop.interface enable-animations false
+log_info "Disabled anitmations"
+
 gsettings set org.gnome.desktop.wm.keybindings close "['<SUPER><SHIFT>q']"
 log_info "Set close window shortcut"
 
