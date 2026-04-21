@@ -1,0 +1,36 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m' # reset
+
+log_info() {
+    echo -e "${GREEN}[INFO]${NC} $1"
+}
+
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+log_info "Set window button layout"
+
+gsettings set org.gnome.mutter dynamic-workspaces false
+log_info "Disabled dynamic workspaces"
+
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
+log_info "Set number of workspaces to 5"
+
+for ((i=1;i<=9;i++)); do
+    gsettings set org.gnome.shell.keybindings "switch-to-application-${i}" []
+    gsettings set org.gnome.desktop.wm.keybindings "switch-to-workspace-${i}" "['<SUPER>${i}']"
+    gsettings set org.gnome.desktop.wm.keybindings "move-to-workspace-${i}" "['<SUPER><SHIFT>${i}']"
+done
+log_info "Set workspace shortcuts"
+
+gsettings set org.gnome.desktop.interface enable-animations false
+log_info "Disabled anitmations"
+
+gsettings set org.gnome.desktop.wm.keybindings close "['<SUPER><SHIFT>q']"
+log_info "Set close window shortcut"
+
+IFS=$'\n' assignments=( $(gsettings list-recursively | grep -i "'<super>[1-9]'") )
+for setting in "${assignments[@]}"; do
+    set -- ${setting}
+    log_info ${setting}
+done
