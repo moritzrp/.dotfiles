@@ -33,9 +33,11 @@ COLOR_RESET='\[\033[00m\]'
 COLOR_USER='\[\033[00;32m\]' # Green
 COLOR_PATH='\[\033[00;34m\]' # Blue
 COLOR_GIT='\[\033[00;33m\]'  # Yellow
+COLOR_ERR='\[\033[00;31m\]'  # Red
 
 # Set the prompt
-PS1="${COLOR_USER}\u@\H${COLOR_RESET} ${COLOR_PATH}\w ${COLOR_GIT}"'$(__git_ps1 " <%s>")'"${COLOR_RESET}\n\$ "
+PS1="${COLOR_USER}\u@\H${COLOR_RESET} ${COLOR_PATH}\w ${COLOR_GIT}"'$(__git_ps1 " <%s>")'"${COLOR_RESET}\n"
+PS1+='$(if [[ $? -ne 0 ]]; then echo "'"${COLOR_ERR}\$${COLOR_RESET}"'"; else echo "\$"; fi) '
 
 # aliases
 alias vim="nvim"
