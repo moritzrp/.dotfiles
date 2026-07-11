@@ -29,6 +29,14 @@ COLOR_ERR='\[\033[00;31m\]'  # Red
 PS1="${COLOR_USER}\u@\H${COLOR_RESET} ${COLOR_PATH}\w ${COLOR_GIT}"'$(__git_ps1 " <%s>")'"${COLOR_RESET}\n"
 PS1+='$(if [[ $? -ne 0 ]]; then echo "'"${COLOR_ERR}\$${COLOR_RESET}"'"; else echo "\$"; fi) '
 
+# history
+HISTFILE="$HOME/.bash_history"
+HISTSIZE=10000000
+HIST_STAMPS="dd.mm.yyyy"
+SAVEHIST=10000000
+HISTORY_IGNORE="(ls|cd|pwd|exit)*"
+HISTCONTROL=ignoreboth
+
 # aliases
 alias vim="nvim"
 alias lg="lazygit"
