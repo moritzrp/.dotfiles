@@ -80,3 +80,7 @@ fi
 if [ -d $HOME/.cargo/env ]; then
   . "$HOME/.cargo/env"
 fi
+
+if [ -x fzf ]; then
+  eval "$(fzf --bash)"
+fi
