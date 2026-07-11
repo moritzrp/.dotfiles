@@ -54,3 +54,9 @@ if [ ! -d "$HOME/.nvm" ]; then
   echo "Installing nvm"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 fi
+
+if [ ! -f /usr/local/go ]; then
+  curl -LO https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
+  sudo tar -C /usr/local -xzf go1.26.5.linux-amd64.tar.gz
+  rm go1.26.5.linux-amd64.tar.gz
+fi
