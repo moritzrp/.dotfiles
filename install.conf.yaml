@@ -9,8 +9,7 @@
 - create:
     ~/.ssh:
       mode: 0700
-    ~/work:
-    ~/personal:
+    ~/projects/github:
 
 - link:
     ~/.vimrc: vimrc
