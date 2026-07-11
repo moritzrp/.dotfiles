@@ -13,7 +13,7 @@
 
 - link:
     ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.bashrc: .bashrc
     ~/.local/bin/:
       glob: true
       path: local/bin/*
