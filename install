@@ -22,13 +22,13 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
-if [ ! command -v uv ] >/dev/null 2>&1; then
+if ! command -v uv >/dev/null 2>&1; then
   echo
   echo "Installing uv"
   sudo dnf install uv
 fi
 
-if [ ! command -v nvim ] >/dev/null 2>&1; then
+if ! command -v nvim >/dev/null 2>&1; then
   echo
   echo "Installing nvim"
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
@@ -37,14 +37,14 @@ if [ ! command -v nvim ] >/dev/null 2>&1; then
   rm nvim-linux-x86_64.tar.gz
 fi
 
-if [ ! -f $HOME/.fonts/JetBrainsMonoNerdFont-Regular.ttf ]; then
+if [ ! -f "$HOME/.fonts/JetBrainsMonoNerdFont-Regular.ttf" ]; then
   echo
   echo "Installing JetBrains Mono NerdFont"
-  if [ ! -d $HOME/.fonts ]; then
-    mkdir $HOME/.fonts
+  if [ ! -d "$HOME/.fonts" ]; then
+    mkdir "$HOME/.fonts"
   fi
   curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-  unzip JetBrainsMono.zip "JetBrainsMonoNerdFont-Regular.ttf" -d $HOME/.fonts
+  unzip JetBrainsMono.zip "JetBrainsMonoNerdFont-Regular.ttf" -d "$HOME/.fonts"
   fc-cache -fv
   rm JetBrainsMono.zip
 fi
