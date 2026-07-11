@@ -48,3 +48,9 @@ if [ ! -f "$HOME/.fonts/JetBrainsMonoNerdFont-Regular.ttf" ]; then
   fc-cache -fv
   rm JetBrainsMono.zip
 fi
+
+if [ ! -d "$HOME/.nvm" ]; then
+  echo
+  echo "Installing nvm"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+fi
