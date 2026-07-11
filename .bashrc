@@ -14,7 +14,7 @@ export PATH
 
 # git branch in prompt
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-    source /usr/share/git-core/contrib/completion/git-prompt.sh
+  source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
 # color
@@ -72,11 +72,11 @@ ewrk() {
 
 # tools
 if [ -d $HOME/.nvm ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
 
 if [ -d $HOME/.cargo/env ]; then
-    . "$HOME/.cargo/env"
+  . "$HOME/.cargo/env"
 fi
