@@ -89,6 +89,6 @@ if [ -d $HOME/.cargo/env ]; then
   . "$HOME/.cargo/env"
 fi
 
-if [ -x fzf ]; then
+if [ -f /usr/sbin/fzf ]; then
   eval "$(fzf --bash)"
 fi
